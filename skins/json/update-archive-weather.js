@@ -24,7 +24,7 @@ jQuery(document).ready(function () {
 function readAndUpdateLatestArchive() {
 	xhttp = new XMLHttpRequest();
 
-	dayUrl = 'day.json';
+	dayUrl = 'https://content1.hillheadsc.org.uk/weewx/json/day.json';
 
 	xhttp.onreadystatechange = function(){
 	  if (this.readyState == 4 && this.status == 200) { // Set a callback to run when the Google Visualization API is loaded.
