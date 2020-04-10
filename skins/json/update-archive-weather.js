@@ -1,24 +1,4 @@
-jQuery(document).ready(function () {
-	// check if we have an element with id of archiveweather
-	// the liveweather HTML elements should be wrapper in a div
-	// of id "liveweather"
-	if($('#archiveweather').length){
 
-		// Load the Visualization API and the piechart package.
-		google.charts.load('current', {'packages':['corechart']});
-
-		//dayUrl = 'https://content1.hillheadsc.org.uk/weewx/json/day.json';
-		readAndUpdateLatestArchive('day.json')
-		
-		setInterval(function(){
-		 readAndUpdateLatestArchive() // this will run after every 60 seconds
-		}, 60000);
-
-		
-
-		
-	} // if #archiveweather
-}) // jquery ready
 
 //get json data
 function readAndUpdateLatestArchive(dayUrl) {

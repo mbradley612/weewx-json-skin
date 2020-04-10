@@ -6,6 +6,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
 <script src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="update-archive-weather.js"></script>
+<script>
+jQuery(document).ready(function () {
+	// check if we have an element with id of archiveweather
+	// the liveweather HTML elements should be wrapper in a div
+	// of id "liveweather"
+	if($('#archiveweather').length){
+
+		// Load the Visualization API and the piechart package.
+		google.charts.load('current', {'packages':['corechart']});
+
+		//dayUrl = 'https://content1.hillheadsc.org.uk/weewx/json/day.json';
+		readAndUpdateLatestArchive('day.json')
+		
+		setInterval(function(){
+		 readAndUpdateLatestArchive() // this will run after every 60 seconds
+		}, 60000);
+
+		
+
+		
+	} // if #archiveweather
+}) // jquery ready
+</script>
 <body>
 <h1>Latest weather report</h1>
 <div id="archiveweather">
