@@ -1,11 +1,8 @@
 
 
 //get json data
-function readAndUpdateLatestArchive(contentUrl) {
+function readAndUpdateLatestArchive(contentUrl,isFileLoader) {
   xhttp = new XMLHttpRequest();
-
-  dayUrl = contentUrl + "/day.json";
-  //dayUrl = "day.json";
 
   
 	xhttp.onreadystatechange = function(){
@@ -27,8 +24,17 @@ function readAndUpdateLatestArchive(contentUrl) {
 	    
 
 	  }
-	}
-	xhttp.open("GET",dayUrl);
+  }
+  // if we are using the fileLoader, the we add day.json as the file-name parameter to the file loader
+  if (isFileLoader) {
+    fetchURL = contentUrl + '?file-name=day.json';
+  } else {
+  // otherwise append the filename to the URL
+    fetchURL = contentUrl + '/day.json';
+   
+  }
+  
+  xhttp.open("GET",fetchURL);
 	xhttp.send();
 }
 
