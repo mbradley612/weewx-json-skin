@@ -40,7 +40,6 @@ jQuery(document).ready(function () {
 	// Load the Visualization API and the piechart package.
 	google.charts.load('current', {'packages':['corechart']});
 
-	//dayUrl = 'https://content1.hillheadsc.org.uk/weewx/json/day.json';
 	readAndUpdateLatestArchive('$Extras.Json.content_path',$Extras.Json.is_file_loader);
 	
 	setInterval(function(){

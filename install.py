@@ -11,7 +11,7 @@ def loader():
 class BasicInstaller(ExtensionInstaller):
     def __init__(self):
         super(BasicInstaller, self).__init__(
-            version="0.1",
+            version="0.2",
             name='json-skin',
             description='Skin that produces reports in JSON suitable for consumption using Google Charts.',
             author="Matthew Bradley",
