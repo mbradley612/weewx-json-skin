@@ -1,8 +1,11 @@
 
 
 //get json data
-function readAndUpdateLatestArchive(dayUrl) {
-	xhttp = new XMLHttpRequest();
+function readAndUpdateLatestArchive(contentUrl) {
+  xhttp = new XMLHttpRequest();
+
+  dayUrl = contentUrl + "/day.json";
+  //dayUrl = "day.json";
 
   
 	xhttp.onreadystatechange = function(){
