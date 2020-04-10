@@ -7,8 +7,8 @@ jQuery(document).ready(function () {
 		// Load the Visualization API and the piechart package.
 		google.charts.load('current', {'packages':['corechart']});
 
-		
-		readAndUpdateLatestArchive()
+		//dayUrl = 'https://content1.hillheadsc.org.uk/weewx/json/day.json';
+		readAndUpdateLatestArchive('day.json')
 		
 		setInterval(function(){
 		 readAndUpdateLatestArchive() // this will run after every 60 seconds
@@ -21,11 +21,10 @@ jQuery(document).ready(function () {
 }) // jquery ready
 
 //get json data
-function readAndUpdateLatestArchive() {
+function readAndUpdateLatestArchive(dayUrl) {
 	xhttp = new XMLHttpRequest();
 
-	dayUrl = 'https://content1.hillheadsc.org.uk/weewx/json/day.json';
-
+  
 	xhttp.onreadystatechange = function(){
 	  if (this.readyState == 4 && this.status == 200) { // Set a callback to run when the Google Visualization API is loaded.
 	    r=this.responseText;
