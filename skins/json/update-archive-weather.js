@@ -47,6 +47,7 @@ function updateLatestArchive() {
   jQuery("#latestArchiveWindSpeed").text(latestArchiveData.windSpeed);
   jQuery("#latestArchiveWindGust").text(latestArchiveData.windGust);
   jQuery("#latestArchiveWindDirection").text(latestArchiveData.windDirectionOrdinal);
+  jQuery("#latestArchiveWindDirectionDegrees").html(latestArchiveData.windDirection);
   jQuery("#latestArchivePressure").text(latestArchiveData.pressure);
 };
 
