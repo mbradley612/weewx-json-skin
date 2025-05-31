@@ -80,7 +80,15 @@ function drawCharts() { //Create table data
     curveType: 'function',
     legend: {
     position: 'bottom' },
-    hAxis:{ format:"HH:mm" } };
+    hAxis:{ format:"HH:mm" }, 
+    series: {
+      0: { targetAxisIndex: 1 } // bind data to right axis
+    },
+    vAxes: {
+      0: { textPosition: 'none' }, // hide left Y axis labels
+      1: { textPosition: 'out' }   // show right Y axis labels
+    }};
+
 
     dirOptions = {
        title: 'Wind Direction',
@@ -91,11 +99,16 @@ function drawCharts() { //Create table data
        hAxis:{
          format:"HH:mm"
        },
+       series: {
+         0: { targetAxisIndex: 1 } // bind data to right axis
+       },
        vAxis:{
          viewWindow:{
            min:0,
            max:360
-         }
+         },
+         0: { textPosition: 'none' }, // hide left Y axis labels
+         1: { textPosition: 'out' }   // show right Y axis labels
        }
      };
 
@@ -108,6 +121,13 @@ function drawCharts() { //Create table data
       hAxis:{
         format:"HH:mm"
       },
+      series: {
+        0: { targetAxisIndex: 1 } // bind data to right axis
+      },
+      vAxes: {
+        0: { textPosition: 'none' }, // hide left Y axis labels
+        1: { textPosition: 'out' }   // show right Y axis labels
+      }
     };
 
     var windChart = new
