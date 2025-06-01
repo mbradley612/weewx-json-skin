@@ -82,7 +82,8 @@ function drawCharts() { //Create table data
     position: 'bottom' },
     hAxis:{ format:"HH:mm" }, 
     series: {
-      0: { targetAxisIndex: 1 } // bind data to right axis
+      0: { targetAxisIndex: 1 }, // bind data to right axis
+      1: { targetAxisIndex: 1 }
     },
     vAxes: {
       0: { textPosition: 'none' }, // hide left Y axis labels
@@ -122,7 +123,8 @@ function drawCharts() { //Create table data
         format:"HH:mm"
       },
       series: {
-        0: { targetAxisIndex: 1 } // bind data to right axis
+        0: { targetAxisIndex: 1 },
+        1: { targetAxisIndex: 1 }  // bind data to right axis
       },
       vAxes: {
         0: { textPosition: 'none' }, // hide left Y axis labels
